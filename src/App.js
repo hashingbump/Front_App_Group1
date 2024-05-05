@@ -4,6 +4,7 @@ import Account from './pages/account';
 import Login from './pages/login';
 import Register from './pages/register';
 import EditPost from './pages/editPost';
+import EditComment from './pages/editComment';
 import Personal from './pages/personal';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                 <Route path='/account' element={<Account />} />
                 <Route path='/personal' element={<Personal />} />
                 <Route path='/editPost/:postId' element={<EditPost />} />
+                <Route path='/editComment/:commentId' element={<EditComment />} />
                 <Route path='*' element={<Home />} />
             </Routes>
         </BrowserRouter>

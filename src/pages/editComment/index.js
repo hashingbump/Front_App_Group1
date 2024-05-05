@@ -4,11 +4,10 @@ import Layout from '../../components/layout';
 import axios from 'axios';
 import './style.scss';
 
-function EditPost() {
+function EditComment() {
     const baseUrl = 'https://back2-1.onrender.com';
-    const { postId } = useParams();
-    const [title, setTitle] = useState('');
-    const [mediaFiles, setMediaFiles] = useState([]);
+    const { commentId } = useParams();
+    const [content, setContent] = useState('');
     const [message, setMessage] = useState('');
 
     const navigate = useNavigate();
@@ -21,7 +20,7 @@ function EditPost() {
 
     const handleDelete = async () => {
         try {
-            const response = await axios.post(baseUrl+`/users/posts/delete/${postId}`, null, {
+            const response= await axios.post(baseUrl+`/users/comments/delete/${commentId}`, null, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }
@@ -35,25 +34,17 @@ function EditPost() {
             }
             setMessage('Delete successfully');
         } catch (error) {
-            setMessage('Error deleting post');
+            setMessage('Error deleting comment');
         }
     };
 
     const handleUpdate = async () => {
         try {
-            const formData = new FormData();
-            formData.append('title', title);
-
-            mediaFiles.forEach(file => {
-                formData.append('files', file);
-            });
-
-            const response = await axios.post(baseUrl+`/users/posts/${postId}`, formData, {
+            const response = await axios.post(baseUrl+`/users/comments/${commentId}`, {content}, {
                 headers: {
-                    'Content-Type': 'multipart/form-data',
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }
-            });
+            });           
             if(response.data.data==='Token missing' || response.data.data==='Token invalid'){
                 if(localStorage.getItem('token'))
                     localStorage.removeItem('token');
@@ -61,14 +52,10 @@ function EditPost() {
                     localStorage.removeItem('userId');
                 navigate('/');
             }
-            setMessage(`Post updated successfully`);
+            setMessage(`Comment updated successfully`);
         } catch (error) {
             setMessage('Error Update');
         }
-    };
-
-    const handleFileChange = (e) => {
-        setMediaFiles([...e.target.files]);
     };
 
     return (
@@ -80,16 +67,12 @@ function EditPost() {
         </tr>
         <tr>
             <th className="container">
-                <h1 className='ten'>Update Post</h1>
+                <h1 className='ten'>Update Comment</h1>
                 <div className="login-form">
-                    <input className="userName-input" type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
-                    <div className='avatar-file'>
-                        <p>Files</p>
-                        <input className="file-input" type="file" multiple onChange={handleFileChange} />
-                    </div>
+                    <input className="userName-input" type="text" placeholder="Comment..." value={content} onChange={(e) => setContent(e.target.value)} />
                     <button className="login-btn" onClick={handleUpdate}>Update</button>
                     <br/> <br/>
-                    <button className="signup-btn" onClick={handleDelete}>Delete Post</button>
+                    <button className="signup-btn" onClick={handleDelete}>Delete Comment</button>
                 </div>
                 <p class="message">{message}</p>
             </th>
@@ -98,4 +81,4 @@ function EditPost() {
     );
 }
 
-export default EditPost;
+export default EditComment;
