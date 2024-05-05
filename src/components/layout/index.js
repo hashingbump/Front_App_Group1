@@ -62,7 +62,7 @@ function Layout() {
                 <th className='j2'> 
                     <button class="btn btn-account-layout" onClick={() => { navigate('/account'); }}>Account</button> 
                     <div className='j1'>
-                        <p>{`Xin chào, ${userName}`}</p>
+                        <p>{`Hello, ${userName}`}</p>
                         <img className='avatar-header' src={avatar} />
                         {localStorage.getItem('token') ? (
                         <button class="btn-signout" onClick={handleLogout}>Logout</button>
