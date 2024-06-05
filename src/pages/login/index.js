@@ -4,7 +4,7 @@ import axios from 'axios';
 import './style.scss';
 
 function Login() {
-    const baseUrl = 'https://back2-1.onrender.com';
+    const baseUrl = '';
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');

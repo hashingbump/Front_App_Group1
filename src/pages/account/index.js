@@ -5,7 +5,7 @@ import axios from 'axios';
 import './style.scss';
 
 function Account() {
-    const baseUrl = 'https://back2-1.onrender.com';
+    const baseUrl = '';
     const [userName, setUserName] = useState('');
     const [file, setFile] = useState(null);
     const [password, setPassword] = useState('');

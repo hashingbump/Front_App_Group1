@@ -5,7 +5,7 @@ import axios from 'axios';
 import './style.scss';
 
 function Home() {
-    const baseUrl = 'https://back2-1.onrender.com';
+    const baseUrl = '';
     const [title, setTitle] = useState('');
     const [mediaFiles, setMediaFiles] = useState([]);
     const [posts, setPosts] = useState([]);
@@ -117,13 +117,6 @@ function Home() {
         <tr className='header'>
             <th className='header-th'>
                 <Layout/> 
-            </th>
-        </tr>
-        <tr className="create-post-section">
-            <th>
-                <input className="create-post-text-input" type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
-                <input className="create-post-input" type="file" multiple onChange={handleFileChange} />
-                <button className="create-post-button" onClick={handleCreatePost}>Create Post</button>
             </th>
         </tr>
         <tr className="post-list">
