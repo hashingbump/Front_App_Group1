@@ -7,6 +7,8 @@ import RestaurantList from "./pages/RestaurantList";
 import Order from "./pages/Order";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
+import RestaurantDetail from "./pages/RestaurantDetail";
+import Checkoutpage from "./pages/Checkoutpage";
 function App() {
   return (
     <BrowserRouter>
@@ -15,9 +17,11 @@ function App() {
         <Route path="/register" element={<Registerpage />} />
         <Route path="/" element={<Hompage />} />
         <Route path="/restaurant" element={<RestaurantList />} />
+        <Route path="/restaurant/:id" element={<RestaurantDetail />} />
         <Route path="/order" element={<Order />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/checkout" element={<Checkoutpage />} />
         <Route path="*" element={<h1>Not Found</h1>} />
         {/* <Route path="/dashboard" element={<Dashboard />} /> */}
       </Routes>

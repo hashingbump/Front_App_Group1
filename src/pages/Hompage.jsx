@@ -62,6 +62,8 @@ const Hompage = () => {
         "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
       name: "Mindx chi nhánh Phú Nhuận",
       distance: 5,
+      numReviews: 100,
+      price: 100000,
     },
     {
       id: 1,
@@ -70,6 +72,8 @@ const Hompage = () => {
         "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
       name: "Mindx chi nhánh Phú Nhuận",
       distance: 5,
+      numReviews: 100,
+      price: 100000,
     },
     {
       id: 2,
@@ -78,6 +82,8 @@ const Hompage = () => {
         "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
       name: "Mindx chi nhánh Phú Nhuận",
       distance: 5,
+      numReviews: 100,
+      price: 100000,
     },
     {
       id: 3,
@@ -86,6 +92,8 @@ const Hompage = () => {
         "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
       name: "Mindx chi nhánh Phú Nhuận",
       distance: 5,
+      numReviews: 100,
+      price: 100000,
     },
     {
       id: 4,
@@ -94,6 +102,50 @@ const Hompage = () => {
         "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
       name: "Mindx chi nhánh Phú Nhuận",
       distance: 5,
+      numReviews: 100,
+      price: 100000,
+    },
+  ];
+  const menus = [
+    {
+      id: 0,
+      imageUrl:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+      name: "Bò hầm",
+      restaurants: "Mindx chi nhánh Phú Nhuận",
+      price: 100000,
+    },
+    {
+      id: 1,
+      imageUrl:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+      name: "Bò hầm",
+      restaurants: "Mindx chi nhánh Phú Nhuận",
+      price: 100000,
+    },
+    {
+      id: 2,
+      imageUrl:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+      name: "Bò hầm",
+      restaurants: "Mindx chi nhánh Phú Nhuận",
+      price: 100000,
+    },
+    {
+      id: 3,
+      imageUrl:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+      name: "Bò hầm",
+      restaurants: "Mindx chi nhánh Phú Nhuận",
+      price: 100000,
+    },
+    {
+      id: 4,
+      imageUrl:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+      name: "Bò hầm",
+      restaurants: "Mindx chi nhánh Phú Nhuận",
+      price: 100000,
     },
   ];
   return (
@@ -294,7 +346,31 @@ const Hompage = () => {
           modules={[Navigation]}
           className="mySwiper mt-10"
         >
-          <SwiperSlide>
+          {menus.map((menu) => (
+            <SwiperSlide key={menu.id}>
+              <Card
+                className="mt-6 cursor-pointer"
+                onClick={() => navigate("/restaurant/0")}
+              >
+                <CardHeader color="blue-gray" className="relative h-56">
+                  <img src={menu.imageUrl} alt="card-image" />
+                </CardHeader>
+                <CardBody className="mx-auto">
+                  <Typography variant="h5">{menu.name}</Typography>
+                  <Typography color="blue-gray" className=" text-center">
+                    {menu.restaurants}
+                  </Typography>
+                </CardBody>
+                <CardFooter className="w-full pt-0 flex items-center justify-around gap-5">
+                  <Typography color="black" variant="h4">
+                    {menu.price.toLocaleString("en-US")} đ
+                  </Typography>
+                </CardFooter>
+              </Card>
+            </SwiperSlide>
+          ))}
+
+          {/* <SwiperSlide>
             <Card
               className="mt-6 cursor-pointer"
               onClick={() => navigate("/restaurant/0")}
@@ -314,7 +390,7 @@ const Hompage = () => {
               <CardFooter className="w-full pt-0 flex items-center justify-around gap-5">
                 {/* <Button variant="gradient" color="green">
                   Chi tiết
-                </Button> */}
+                </Button> 
                 <Button className="w-1/2" variant="gradient" color="blue">
                   Đặt bàn
                 </Button>
@@ -416,9 +492,10 @@ const Hompage = () => {
                 </Button>
               </CardFooter>
             </Card>
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
-        {/* <div className="grid grid-cols-4"> */}
+      </div>
+      <div className="grid grid-cols-4">
         {/* <Swiper
           slidesPerView={4}
           spaceBetween={30}
