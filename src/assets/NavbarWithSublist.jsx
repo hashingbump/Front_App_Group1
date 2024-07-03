@@ -176,7 +176,7 @@ function NavList() {
           Nhà hàng
         </ListItem>
       </Typography>
-      <Typography
+      {/* <Typography
         as="a"
         href="#"
         variant="small"
@@ -197,7 +197,7 @@ function NavList() {
         <ListItem className="flex items-center gap-2 py-2 pr-4">
           Đặt online
         </ListItem>
-      </Typography>
+      </Typography> */}
       <Typography
         as="a"
         href="/about-us"
@@ -332,14 +332,14 @@ export const NavbarWithSublist = () => {
                 </svg>
               </Button>
             </div>
-            <Button
+            {/* <Button
               size="sm"
               variant="outline"
               color="white"
               className="rounded-lg w-full"
             >
               <ShoppingCartIcon className="w-full" />
-            </Button>
+            </Button> */}
           </div>
         </div>
         <IconButton

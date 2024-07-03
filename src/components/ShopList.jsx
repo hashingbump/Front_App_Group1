@@ -1,37 +1,81 @@
-import React from "react";
+import React, { useState } from "react";
 import {
+  Navbar,
+  Collapse,
+  Typography,
+  Button,
+  IconButton,
+  List,
+  ListItem,
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
   Card,
   CardHeader,
   CardBody,
   CardFooter,
-  Typography,
-  Button,
+  Radio,
+  Input,
+  Option,
+  Select,
 } from "@material-tailwind/react";
+import PropTypes from "prop-types";
+import ProductCard from "./ProductCard";
+import Pagination from "./Pagination";
+const ShopList = ({ restaurants }) => {
+  const [filter, setFilter] = useState("new");
+  const handleFilter = (e) => setFilter(e);
 
-function ShopList() {
+  const [active, setActive] = useState(1);
   return (
-    <Card className="mt-6 w-96">
-      <CardHeader color="blue-gray" className="relative h-56">
-        <img
-          src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-          alt="card-image"
-        />
-      </CardHeader>
-      <CardBody>
-        <Typography variant="h5" color="blue-gray" className="mb-2">
-          UI/UX Review Check
-        </Typography>
-        <Typography>
-          The place is close to Barceloneta Beach and bus stop just 2 min by
-          walk and near to &quot;Naviglio&quot; where you can enjoy the main
-          night life in Barcelona.
-        </Typography>
-      </CardBody>
-      <CardFooter className="pt-0">
-        <Button>Read More</Button>
-      </CardFooter>
-    </Card>
+    <div className="col-span-3">
+      <div className="w-full flex items-center gap-4 justify-between mb-20">
+        <div>{restaurants.length} kết quả</div>
+        <div className="flex items-center gap-5">
+          <span>Phân loại:</span>
+          <span>
+            <Select value={filter} onChange={handleFilter} className="rounded">
+              <Option value="new" defaultChecked>
+                Mới nhất
+              </Option>
+              <Option value="old">Cũ nhất</Option>
+              <Option value="A->Z">A {" -> "} Z</Option>
+              <Option value="Z->A">Z {" -> "} A</Option>
+              <Option value="price-asc">Giá tăng dần</Option>
+              <Option value="price-desc">Giá giảm dần</Option>
+            </Select>
+          </span>
+        </div>
+      </div>
+      <div className="grid grid-cols-3 gap-8">
+        {restaurants.slice(active * 6 - 6, active * 6).map((product) => (
+          <ProductCard key={product.id} {...product} />
+        ))}
+      </div>
+      <Pagination
+        page={Math.ceil(restaurants.length / 6)}
+        active={active}
+        setActive={setActive}
+      />
+    </div>
   );
-}
-
+};
+ShopList.propTypes = {
+  restaurants: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      colors: PropTypes.arrayOf(
+        PropTypes.shape({
+          color: PropTypes.string.isRequired,
+          label: PropTypes.string.isRequired,
+        }).isRequired
+      ).isRequired,
+      price: PropTypes.number.isRequired,
+      rating: PropTypes.number.isRequired,
+      imageUrl: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
+};
 export default ShopList;

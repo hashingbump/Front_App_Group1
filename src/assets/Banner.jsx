@@ -269,7 +269,7 @@ export function Banner() {
           <Bars2Icon className="h-6 w-6" />
         </IconButton>
 
-        {localStorage.getItem("token") ? (
+        {!localStorage.getItem("token") ? (
           <div>
             <Button size="sm" variant="text" onClick={() => navigate("/login")}>
               <span>Đăng nhập</span>

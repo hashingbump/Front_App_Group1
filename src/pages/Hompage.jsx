@@ -16,6 +16,7 @@ import {
   CardBody,
   CardFooter,
   Radio,
+  Rating,
 } from "@material-tailwind/react";
 import {
   ChevronDownIcon,
@@ -45,6 +46,7 @@ import { Container } from "@mui/material";
 import { Footer } from "../assets/Footer";
 import { Banner } from "../assets/Banner";
 import { useNavigate } from "react-router-dom";
+import ProductCard from "../components/ProductCard";
 const Hompage = () => {
   const [selectedColor, setSelectedColor] = useState("");
   const navigate = useNavigate();
@@ -52,6 +54,48 @@ const Hompage = () => {
   const handleColorChange = (color) => {
     setSelectedColor(color);
   };
+  const restaurants = [
+    {
+      id: 0,
+      rating: 4,
+      imageUrl:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+      name: "Mindx chi nhánh Phú Nhuận",
+      distance: 5,
+    },
+    {
+      id: 1,
+      rating: 4,
+      imageUrl:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+      name: "Mindx chi nhánh Phú Nhuận",
+      distance: 5,
+    },
+    {
+      id: 2,
+      rating: 4,
+      imageUrl:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+      name: "Mindx chi nhánh Phú Nhuận",
+      distance: 5,
+    },
+    {
+      id: 3,
+      rating: 4,
+      imageUrl:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+      name: "Mindx chi nhánh Phú Nhuận",
+      distance: 5,
+    },
+    {
+      id: 4,
+      rating: 4,
+      imageUrl:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+      name: "Mindx chi nhánh Phú Nhuận",
+      distance: 5,
+    },
+  ];
   return (
     <>
       <Banner />
@@ -100,129 +144,11 @@ const Hompage = () => {
           modules={[Navigation]}
           className="mySwiper mt-10"
         >
-          <SwiperSlide>
-            <Card
-              className="mt-6 cursor-pointer"
-              onClick={() => navigate("/restaurant/0")}
-            >
-              <CardHeader color="blue-gray" className="relative h-56">
-                <img
-                  src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-                  alt="card-image"
-                />
-              </CardHeader>
-              <CardBody className="mx-auto">
-                <Typography variant="h5">Mindx chi nhánh Phú Nhuận</Typography>
-                <Typography color="blue-gray" className=" text-center">
-                  5km từ vị trí của bạn
-                </Typography>
-              </CardBody>
-              <CardFooter className="w-full pt-0 flex items-center justify-around gap-5">
-                {/* <Button variant="gradient" color="green">
-                  Chi tiết
-                </Button> */}
-                <Button className="w-1/2" variant="gradient" color="blue">
-                  Đặt bàn
-                </Button>
-              </CardFooter>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card className="mt-6">
-              <CardHeader color="blue-gray" className="relative h-56">
-                <img
-                  src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-                  alt="card-image"
-                />
-              </CardHeader>
-              <CardBody className="mx-auto">
-                <Typography variant="h5">Mindx chi nhánh Phú Nhuận</Typography>
-                <Typography color="blue-gray" className=" text-center">
-                  5km từ vị trí của bạn
-                </Typography>
-              </CardBody>
-              <CardFooter className="pt-0 grid grid-cols-2 gap-5">
-                <Button variant="gradient" color="green">
-                  Chi tiết
-                </Button>
-                <Button variant="gradient" color="blue">
-                  Đặt bàn
-                </Button>
-              </CardFooter>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card className="mt-6">
-              <CardHeader color="blue-gray" className="relative h-56">
-                <img
-                  src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-                  alt="card-image"
-                />
-              </CardHeader>
-              <CardBody className="mx-auto">
-                <Typography variant="h5">Mindx chi nhánh Phú Nhuận</Typography>
-                <Typography color="blue-gray" className=" text-center">
-                  5km từ vị trí của bạn
-                </Typography>
-              </CardBody>
-              <CardFooter className="pt-0 grid grid-cols-2 gap-5">
-                <Button variant="gradient" color="green">
-                  Chi tiết
-                </Button>
-                <Button variant="gradient" color="blue">
-                  Đặt bàn
-                </Button>
-              </CardFooter>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card className="mt-6">
-              <CardHeader color="blue-gray" className="relative h-56">
-                <img
-                  src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-                  alt="card-image"
-                />
-              </CardHeader>
-              <CardBody className="mx-auto">
-                <Typography variant="h5">Mindx chi nhánh Phú Nhuận</Typography>
-                <Typography color="blue-gray" className=" text-center">
-                  5km từ vị trí của bạn
-                </Typography>
-              </CardBody>
-              <CardFooter className="pt-0 grid grid-cols-2 gap-5">
-                <Button variant="gradient" color="green">
-                  Chi tiết
-                </Button>
-                <Button variant="gradient" color="blue">
-                  Đặt bàn
-                </Button>
-              </CardFooter>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card className="mt-6">
-              <CardHeader color="blue-gray" className="relative h-56">
-                <img
-                  src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-                  alt="card-image"
-                />
-              </CardHeader>
-              <CardBody className="mx-auto">
-                <Typography variant="h5">Mindx chi nhánh Phú Nhuận</Typography>
-                <Typography color="blue-gray" className=" text-center">
-                  5km từ vị trí của bạn
-                </Typography>
-              </CardBody>
-              <CardFooter className="pt-0 grid grid-cols-2 gap-5">
-                <Button variant="gradient" color="green">
-                  Chi tiết
-                </Button>
-                <Button variant="gradient" color="blue">
-                  Đặt bàn
-                </Button>
-              </CardFooter>
-            </Card>
-          </SwiperSlide>
+          {restaurants.map((restaurant) => (
+            <SwiperSlide key={restaurant.id}>
+              <ProductCard {...restaurant} />
+            </SwiperSlide>
+          ))}
         </Swiper>
         {/* </div> */}
 
@@ -362,6 +288,136 @@ const Hompage = () => {
             Món ăn nổi bật
           </Typography>
         </Container>
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={30}
+          modules={[Navigation]}
+          className="mySwiper mt-10"
+        >
+          <SwiperSlide>
+            <Card
+              className="mt-6 cursor-pointer"
+              onClick={() => navigate("/restaurant/0")}
+            >
+              <CardHeader color="blue-gray" className="relative h-56">
+                <img
+                  src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                  alt="card-image"
+                />
+              </CardHeader>
+              <CardBody className="mx-auto">
+                <Typography variant="h5">Bò hầm</Typography>
+                <Typography color="blue-gray" className=" text-center">
+                  Mindx chi nhánh Phú Nhuận
+                </Typography>
+              </CardBody>
+              <CardFooter className="w-full pt-0 flex items-center justify-around gap-5">
+                {/* <Button variant="gradient" color="green">
+                  Chi tiết
+                </Button> */}
+                <Button className="w-1/2" variant="gradient" color="blue">
+                  Đặt bàn
+                </Button>
+              </CardFooter>
+            </Card>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card className="mt-6">
+              <CardHeader color="blue-gray" className="relative h-56">
+                <img
+                  src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                  alt="card-image"
+                />
+              </CardHeader>
+              <CardBody className="mx-auto">
+                <Typography variant="h5">Mindx chi nhánh Phú Nhuận</Typography>
+                <Typography color="blue-gray" className=" text-center">
+                  5km từ vị trí của bạn
+                </Typography>
+              </CardBody>
+              <CardFooter className="pt-0 grid grid-cols-2 gap-5">
+                <Button variant="gradient" color="green">
+                  Chi tiết
+                </Button>
+                <Button variant="gradient" color="blue">
+                  Đặt bàn
+                </Button>
+              </CardFooter>
+            </Card>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card className="mt-6">
+              <CardHeader color="blue-gray" className="relative h-56">
+                <img
+                  src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                  alt="card-image"
+                />
+              </CardHeader>
+              <CardBody className="mx-auto">
+                <Typography variant="h5">Mindx chi nhánh Phú Nhuận</Typography>
+                <Typography color="blue-gray" className=" text-center">
+                  5km từ vị trí của bạn
+                </Typography>
+              </CardBody>
+              <CardFooter className="pt-0 grid grid-cols-2 gap-5">
+                <Button variant="gradient" color="green">
+                  Chi tiết
+                </Button>
+                <Button variant="gradient" color="blue">
+                  Đặt bàn
+                </Button>
+              </CardFooter>
+            </Card>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card className="mt-6">
+              <CardHeader color="blue-gray" className="relative h-56">
+                <img
+                  src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                  alt="card-image"
+                />
+              </CardHeader>
+              <CardBody className="mx-auto">
+                <Typography variant="h5">Mindx chi nhánh Phú Nhuận</Typography>
+                <Typography color="blue-gray" className=" text-center">
+                  5km từ vị trí của bạn
+                </Typography>
+              </CardBody>
+              <CardFooter className="pt-0 grid grid-cols-2 gap-5">
+                <Button variant="gradient" color="green">
+                  Chi tiết
+                </Button>
+                <Button variant="gradient" color="blue">
+                  Đặt bàn
+                </Button>
+              </CardFooter>
+            </Card>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card className="mt-6">
+              <CardHeader color="blue-gray" className="relative h-56">
+                <img
+                  src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                  alt="card-image"
+                />
+              </CardHeader>
+              <CardBody className="mx-auto">
+                <Typography variant="h5">Mindx chi nhánh Phú Nhuận</Typography>
+                <Typography color="blue-gray" className=" text-center">
+                  5km từ vị trí của bạn
+                </Typography>
+              </CardBody>
+              <CardFooter className="pt-0 grid grid-cols-2 gap-5">
+                <Button variant="gradient" color="green">
+                  Chi tiết
+                </Button>
+                <Button variant="gradient" color="blue">
+                  Đặt bàn
+                </Button>
+              </CardFooter>
+            </Card>
+          </SwiperSlide>
+        </Swiper>
         {/* <div className="grid grid-cols-4"> */}
         {/* <Swiper
           slidesPerView={4}
