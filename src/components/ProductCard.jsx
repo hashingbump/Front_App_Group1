@@ -12,7 +12,15 @@ import {
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Rating } from "@mui/material";
-const ProductCard = ({ id, rating, imageUrl, name, distance, numReviews }) => {
+const ProductCard = ({
+  id,
+  rating,
+  imageUrl,
+  name,
+  distance,
+  numReviews,
+  price,
+}) => {
   const navigate = useNavigate();
   return (
     <Card
@@ -27,10 +35,15 @@ const ProductCard = ({ id, rating, imageUrl, name, distance, numReviews }) => {
         <Typography color="blue-gray" className=" text-center">
           {distance} từ vị trí của bạn
         </Typography>
+        <div className="w-full pt-0 flex items-center justify-around gap-5 mt-1">
+          <Rating value={rating} color="yellow" readonly />
+          {numReviews} reviews
+        </div>
       </CardBody>
-      <CardFooter className="w-full pt-0 flex items-center justify-around gap-5">
-        <Rating value={rating} color="yellow" readonly />
-        {numReviews} reviews
+      <CardFooter>
+        <Typography color="black" variant="h4">
+          {price.toLocaleString("en-US")} đ
+        </Typography>
       </CardFooter>
     </Card>
   );
@@ -42,5 +55,7 @@ ProductCard.propTypes = {
   imageUrl: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   distance: PropTypes.number.isRequired,
+  numReviews: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
 };
 export default ProductCard;
