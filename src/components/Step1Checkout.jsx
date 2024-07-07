@@ -32,6 +32,7 @@ const Step1Checkout = ({ handleNext }) => {
           <Typography variant="h5" color="blue-gray" className="mb-2">
             1. Thông tin người đặt
           </Typography>
+          <Divider />
           <List>
             {localStorage.getItem("token") ? (
               <ListItem onClick={() => setCheck(true)}>
@@ -67,7 +68,7 @@ const Step1Checkout = ({ handleNext }) => {
                     name="address"
                     label={
                       <Typography>
-                        Đăng nhập để chọn địa chỉ giao hàng đã lưu
+                        Đăng nhập để chọn thông tin đã lưu
                       </Typography>
                     }
                   />
@@ -128,67 +129,45 @@ const Step1Checkout = ({ handleNext }) => {
       </Card>
       <Card className="mt-6">
         <CardBody>
-          <Typography variant="h5" color="blue-gray" className="mb-2">
-            2. Thông tin đặt bàn
-          </Typography>
-          <Typography>
-            <List>
-              <ListItem onClick={() => setCheck1(1)}>
-                <div className="flex items-center">
-                  <Radio
-                    checked={check1 === 1}
-                    name="type"
-                    label={
-                      <>
-                        <Typography>Giao hàng tiết kiệm</Typography>
-                        <Typography>
-                          Dự kiến giao từ 5-7 ngày |{" "}
-                          <span className="text-cyan-300">20000đ</span>
-                        </Typography>
-                      </>
-                    }
-                  />
-                </div>
-              </ListItem>
-              <ListItem onClick={() => setCheck1(2)}>
-                <div className="flex items-center">
-                  <Radio
-                    checked={check1 === 2}
-                    name="type"
-                    label={
-                      <>
-                        <Typography>Giao hàng tiêu chuẩn</Typography>
-                        <Typography>
-                          Dự kiến giao từ 2-5 ngày |{" "}
-                          <span className="text-cyan-300">25000đ</span>
-                        </Typography>
-                      </>
-                    }
-                  />
-                </div>
-              </ListItem>
-              <ListItem onClick={() => setCheck1(3)}>
-                <div className="flex items-center">
-                  <Radio
-                    checked={check1 === 3}
-                    name="type"
-                    label={
-                      <>
-                        <Typography>Giao hàng nhanh</Typography>
-                        <Typography>
-                          Dự kiến giao từ 1-2 ngày |{" "}
-                          <span className="text-cyan-300">30000đ</span>
-                        </Typography>
-                      </>
-                    }
-                  />
-                </div>
-              </ListItem>
-            </List>
-          </Typography>
-          <Typography variant="h5" color="blue-gray" className="mt-2">
+          <div className="flex items-center justify-between">
+            <Typography variant="h5" color="blue-gray" className="mb-2">
+              2. Thông tin đặt bàn
+            </Typography>
+            <Typography as="a" href="/cart" color="cyan">
+              Sửa
+            </Typography>
+          </div>
+          <Divider />
+          <div className="grid grid-cols-2 gap-4 mt-8 mb-8">
+            <Typography variant="h6" color="black">
+              Nhà hàng
+            </Typography>
+            <Typography variant="medium" color="black">
+              Mindx Chi nhánh Phú Nhuận
+            </Typography>
+            <Typography variant="h6" color="black">
+              Ngày đặt bàn
+            </Typography>
+            <Typography variant="medium" color="black">
+              12/12/2024
+            </Typography>
+            <Typography variant="h6" color="black">
+              Giờ đặt bàn
+            </Typography>
+            <Typography variant="medium" color="black">
+              12:12
+            </Typography>
+            <Typography variant="h6" color="black">
+              Số lượng bàn
+            </Typography>
+            <Typography variant="medium" color="black">
+              500
+            </Typography>
+          </div>
+          <Typography variant="h5" color="blue-gray" className="mt-2 mb-2">
             3. Phương thức thanh toán
           </Typography>
+          <Divider />
           <Typography>
             <List>
               <ListItem onClick={() => setCheck2(1)}>
@@ -196,9 +175,7 @@ const Step1Checkout = ({ handleNext }) => {
                   <Radio
                     checked={check2 === 1}
                     name="method"
-                    label={
-                      <Typography>Thanh toán tiền mặt khi nhận hàng</Typography>
-                    }
+                    label={<Typography>Thanh toán tiền mặt</Typography>}
                   />
                 </div>
               </ListItem>
@@ -220,7 +197,7 @@ const Step1Checkout = ({ handleNext }) => {
                   <Radio
                     checked={check2 === 3}
                     name="method"
-                    label={<Typography>Thanh toán qua MoMo</Typography>}
+                    label={<Typography>Thanh toán qua thẻ ghi nợ</Typography>}
                   />
                 </div>
               </ListItem>
@@ -232,7 +209,7 @@ const Step1Checkout = ({ handleNext }) => {
         <CardBody>
           <div className="flex items-center justify-between">
             <Typography variant="h5" color="blue-gray" className="mb-2">
-              Xác nhận đơn hàng
+              4. Thực đơn
             </Typography>
             <Typography as="a" href="/cart" color="cyan">
               Sửa
@@ -242,11 +219,9 @@ const Step1Checkout = ({ handleNext }) => {
           <div className="flex items-center justify-between mt-4">
             <Typography className="" variant="body" color="blue-gray">
               1 x{" "}
-              <span className="text-cyan-300 w-[100px] text-wrap">
-                Áo thun nam
-              </span>
+              <span className="text-cyan-300 w-[100px] text-wrap">Bò kho</span>
             </Typography>
-            <div className="flex flex-col">
+            <div className="grid grid-cols-2 gap-4">
               <Typography variant="body" color="blue-gray">
                 58000đ
               </Typography>
@@ -281,8 +256,7 @@ const Step1Checkout = ({ handleNext }) => {
           <Typography variant="body" color="green">
             MX2000
           </Typography>
-          <Checkbox label="Gói quà sản phẩm" />
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center mt-5">
             <Typography variant="body" color="blue-gray">
               Tạm tính
             </Typography>
@@ -296,22 +270,6 @@ const Step1Checkout = ({ handleNext }) => {
             </Typography>
             <Typography variant="body" color="blue-gray">
               0 đ
-            </Typography>
-          </div>
-          <div className="flex justify-between items-center mt-2">
-            <Typography variant="body" color="blue-gray">
-              Phí vận chuyển
-            </Typography>
-            <Typography variant="body" color="blue-gray">
-              27,000 đ
-            </Typography>
-          </div>
-          <div className="flex justify-between items-center mt-2">
-            <Typography variant="body" color="blue-gray">
-              Phí gói quà
-            </Typography>
-            <Typography variant="body" color="blue-gray">
-              10,000 đ
             </Typography>
           </div>
           <div className="mt-5 mb-5">

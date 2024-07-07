@@ -44,45 +44,17 @@ const Step2Checkout = ({ handleNext, handlePrev }) => {
             </Typography>
           </div>
           <img
-            className="h-96 w-1/2 object-cover object-center mx-auto mt-1"
-            src="/public/1719545334144.6924.png"
+            className=" w-1/2 object-cover object-center mx-auto mt-1"
+            src="/public/qrcode.png"
             alt="QR code"
           />
-          <Typography
-            variant="body"
-            color="blue-gray"
-            className="mt-1 text-center"
-          >
-            Hoặc chuyển qua ngân hàng OCB
-          </Typography>
-          <Typography
-            variant="body"
-            color="blue-gray"
-            className="mt-1 text-center"
-          >
-            Số tài khoản: 123456789
-          </Typography>
-          <Typography
-            variant="body"
-            color="blue-gray"
-            className="mt-1 text-center"
-          >
-            Tên chủ tài khoản: Nguyễn Văn A
-          </Typography>
-          <Typography
-            variant="body"
-            color="blue-gray"
-            className="mt-1 text-center"
-          >
-            Nội dung chuyển tiền: Mã đơn hàng + Số điện thoại
-          </Typography>
         </CardBody>
       </Card>
       <Card className="mt-6">
         <CardBody>
           <div className="flex items-center justify-between">
             <Typography variant="h5" color="blue-gray" className="mb-2">
-              Chi tiết đơn hàng #MX2001
+              Chi tiết đơn #MX2001
             </Typography>
             <Typography as="a" href="/cart" color="cyan">
               Sửa
@@ -91,21 +63,32 @@ const Step2Checkout = ({ handleNext, handlePrev }) => {
           <Divider />
           <div className="flex items-center justify-between mt-4">
             <Typography className="" variant="body" color="blue-gray">
-              1 x{" "}
-              <span className="text-cyan-300 w-[100px] text-wrap">
-                Áo thun nam
-              </span>
+              1 x <span className="text-cyan-300 w-[100px] text-wrap">Bàn</span>
             </Typography>
-            <div className="flex flex-col">
-              <Typography variant="body" color="blue-gray">
+            <div className="grid grid-cols-2 gap-8">
+              <Typography className="line-through text-gray-400" variant="body">
                 58000đ
               </Typography>
-              <Typography className="line-through text-gray-400" variant="body">
+              <Typography variant="body" color="blue-gray">
                 58000đ
               </Typography>
             </div>
           </div>
-          <div className="flex justify-between items-center">
+          <div className="flex items-center justify-between mt-4">
+            <Typography className="" variant="body" color="blue-gray">
+              1 x{" "}
+              <span className="text-cyan-300 w-[100px] text-wrap">Bò kho</span>
+            </Typography>
+            <div className="grid grid-cols-2 gap-8">
+              <Typography className="line-through text-gray-400" variant="body">
+                58000đ
+              </Typography>
+              <Typography variant="body" color="blue-gray">
+                58000đ
+              </Typography>
+            </div>
+          </div>
+          <div className="flex justify-between items-center mt-4">
             <Typography variant="body" color="blue-gray">
               Tạm tính
             </Typography>
@@ -121,27 +104,11 @@ const Step2Checkout = ({ handleNext, handlePrev }) => {
               0 đ
             </Typography>
           </div>
-          <div className="flex justify-between items-center mt-2">
-            <Typography variant="body" color="blue-gray">
-              Phí vận chuyển
-            </Typography>
-            <Typography variant="body" color="blue-gray">
-              27,000 đ
-            </Typography>
-          </div>
-          <div className="flex justify-between items-center mt-2">
-            <Typography variant="body" color="blue-gray">
-              Phí gói quà
-            </Typography>
-            <Typography variant="body" color="blue-gray">
-              10,000 đ
-            </Typography>
-          </div>
           <div className="mt-5 mb-5">
             <Divider />
           </div>
           <div className="flex justify-between items-center mt-2">
-            <Typography variant="body" color="blue-gray">
+            <Typography variant="h6" color="blue-gray">
               Tổng cộng
             </Typography>
             <Typography variant="h6" color="blue-gray">
@@ -150,7 +117,7 @@ const Step2Checkout = ({ handleNext, handlePrev }) => {
           </div>
           <div className="flex items-center justify-between mt-10">
             <Typography variant="h5" color="blue-gray">
-              Giao tới
+              Người đặt bàn
             </Typography>
             <Typography color="cyan" onClick={handlePrev}>
               Thay đổi
@@ -160,14 +127,19 @@ const Step2Checkout = ({ handleNext, handlePrev }) => {
             <Typography variant="body" color="blue-gray">
               Rạng thái
             </Typography>
-            <Divider variant="body" />
             <Typography variant="body" color="blue-gray">
               0912345678
             </Typography>
-          </div>
-          <div className="mt-5">
             <Typography variant="body" color="blue-gray">
-              Số nhà 1, đường 1, phường 1, quận 1, TP.HCM
+              rang@gmail.com
+            </Typography>
+          </div>
+          <div className="flex justify-around items-center mt-5">
+            <Typography variant="body" color="blue-gray">
+              Nhận bàn lúc:
+            </Typography>
+            <Typography variant="body" color="blue-gray">
+              12:00 PM 12/12/2021
             </Typography>
           </div>
         </CardBody>

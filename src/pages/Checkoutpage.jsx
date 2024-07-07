@@ -35,21 +35,32 @@ const Checkoutpage = () => {
 
   return (
     <>
-      <Banner />
-      <NavbarWithSublist />
       <Container className="mt-5">
         <Stepper
           activeStep={activeStep}
           isLastStep={(value) => setIsLastStep(value)}
           isFirstStep={(value) => setIsFirstStep(value)}
+          activeLineClassName="bg-[#FF333A]"
         >
-          <Step onClick={() => setActiveStep(0)}>
+          <Step
+            onClick={() => setActiveStep(0)}
+            activeClassName="ring-0 !bg-[#FF333A] text-white"
+            completedClassName="!bg-[#FF333A] text-white"
+          >
             <ShoppingCartIcon className="h-5 w-5" />
           </Step>
-          <Step onClick={() => setActiveStep(1)}>
+          <Step
+            onClick={() => setActiveStep(1)}
+            activeClassName="ring-0 !bg-[#FF333A] text-white"
+            completedClassName="!bg-[#FF333A] text-white"
+          >
             <ReceiptIcon className="h-5 w-5" />
           </Step>
-          <Step onClick={() => setActiveStep(2)}>
+          <Step
+            onClick={() => setActiveStep(2)}
+            activeClassName="ring-0 !bg-[#FF333A] text-white"
+            completedClassName="!bg-[#FF333A] text-white"
+          >
             <CheckCircleIcon className="h-5 w-5" />
           </Step>
         </Stepper>
@@ -59,7 +70,6 @@ const Checkoutpage = () => {
         <Step2Checkout handleNext={handleNext} handlePrev={handlePrev} />
       )}
       {activeStep === 2 && <Step3Checkout />}
-      <Footer />
     </>
   );
 };

@@ -1,9 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types"; // Add this line
-import Banner from "./Banner";
-import NavbarWithSublist from "./NavbarWithSublist";
-import Footer from "./Footer";
+import PropTypes from "prop-types";
 import { Outlet } from "react-router-dom";
+import { Banner } from "../assets/Banner";
+import { NavbarWithSublist } from "../assets/NavbarWithSublist";
+import { Footer } from "../assets/Footer";
 
 const Layout = () => {
   return (

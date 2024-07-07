@@ -28,10 +28,12 @@ const ProductCard = ({
       onClick={() => navigate("/restaurant/" + id)}
     >
       <CardHeader color="blue-gray" className="relative h-56">
-        <img src={imageUrl} alt="card-image" />
+        <img src={imageUrl} alt="card-image" className="object-cover " />
       </CardHeader>
       <CardBody className="mx-auto">
-        <Typography variant="h5">{name}</Typography>
+        <Typography variant="h5" className="text-center">
+          {name}
+        </Typography>
         <Typography color="blue-gray" className=" text-center">
           {distance} từ vị trí của bạn
         </Typography>
@@ -40,8 +42,8 @@ const ProductCard = ({
           {numReviews} reviews
         </div>
       </CardBody>
-      <CardFooter>
-        <Typography color="black" variant="h4">
+      <CardFooter className="!pt-0">
+        <Typography color="black" variant="h4" className="text-center">
           {price.toLocaleString("en-US")} đ
         </Typography>
       </CardFooter>
