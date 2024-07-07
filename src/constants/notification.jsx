@@ -20,9 +20,9 @@ const success_checkout = {
     </svg>
   ),
   name: "Thành công",
-  message: "Đơn hàng của bạn đã được đặt thành công",
+  message: "Đơn của bạn đã được đặt thành công",
   subtitile:
-    "Chúng tôi sẽ gửi thông báo qua email và tin nhắn SMS cho bạn. Cảm ơn bạn đã mua hàng tại cửa hàng của chúng tôi",
+    "Chúng tôi sẽ gửi thông báo qua email và tin nhắn SMS cho bạn. Cảm ơn bạn đã sử dụng sản phẩm của chúng tôi",
 };
 const fail_checkout = {
   icon: (
@@ -42,9 +42,9 @@ const fail_checkout = {
     </svg>
   ),
   name: "Thất bại",
-  message: "Đơn hàng của bạn đã bị hủy",
+  message: "Đơn của bạn đã bị hủy",
   subtitile:
-    "Vui lòng kiểm tra lại thông tin đơn hàng và thử lại sau. Cảm ơn bạn đã mua hàng tại cửa hàng của chúng tôi",
+    "Vui lòng kiểm tra lại thông tin đơn và thử lại sau. Cảm ơn bạn đã quan tâm đền sản phẩm của chúng tôi",
 };
 const not_found = {
   icon: <FlagIcon color="red" className="w-20 h-20 mx-auto" />,

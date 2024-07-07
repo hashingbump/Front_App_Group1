@@ -79,8 +79,6 @@ const restaurants = [
 const RestaurantList = () => {
   return (
     <>
-      <Banner />
-      <NavbarWithSublist />
       <div className="mb-5"></div>
       <div className="grid grid-cols-4 gap-8 mt-4">
         <div className="ms-10">
@@ -88,7 +86,6 @@ const RestaurantList = () => {
         </div>
         <ShopList restaurants={restaurants} />
       </div>
-      <Footer />
     </>
   );
 };

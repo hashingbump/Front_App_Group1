@@ -143,8 +143,6 @@ const RestaurantDetail = () => {
   const navigate = useNavigate();
   return (
     <>
-      <Banner />
-      <NavbarWithSublist />
       <div className="mb-5"></div>
       <div className="grid grid-cols-3 gap-8 m-4">
         <img
@@ -339,8 +337,6 @@ const RestaurantDetail = () => {
           </Card>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 };

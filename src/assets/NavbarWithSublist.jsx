@@ -168,7 +168,7 @@ function NavList() {
       <Typography
         as="a"
         href="/restaurant"
-        variant="small"
+        variant="h5"
         color="blue-gray"
         className="font-medium"
       >
@@ -201,7 +201,7 @@ function NavList() {
       <Typography
         as="a"
         href="/about-us"
-        variant="small"
+        variant="h5"
         color="blue-gray"
         className="font-medium"
       >
@@ -212,7 +212,7 @@ function NavList() {
       <Typography
         as="a"
         href="/contact"
-        variant="small"
+        variant="h5"
         color="blue-gray"
         className="font-medium"
       >

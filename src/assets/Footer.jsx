@@ -3,7 +3,7 @@ import { Typography } from "@material-tailwind/react";
 const LINKS = [
   {
     title: "Dịch vụ",
-    items: ["Trang chủ", "Nhà hàng", "Thực đơn", "Đặt bàn", "Thanh toán"],
+    items: ["Trang chủ", "Nhà hàng", "Thanh toán"],
   },
   {
     title: "Công ty",
